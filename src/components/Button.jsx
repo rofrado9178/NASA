@@ -4,27 +4,23 @@ const Button = () => {
   const [like, setLike] = useState(false);
   const [dislike, setDisLike] = useState(false);
 
-  // const changeColor = (){
-  //   if(!like) {
-
-  //   }
-  // }
-
   return (
     <aside>
       <button
         className="button"
-        onClick={() => (!like ? setLike(true) : setLike(false))}
+        onClick={() =>
+          !like ? (setLike(true), setDisLike(false)) : setLike(false)
+        }
       >
         <BiLike className={!like ? "like" : "fill"} />
       </button>
       <button
         className="button"
         onClick={() =>
-          !like && !dislike ? setDisLike(true) : setDisLike(false)
+          !dislike ? (setDisLike(true), setLike(false)) : setDisLike(false)
         }
       >
-        <BiDislike className={!like ? "like" : "fill"} />
+        <BiDislike className={!dislike ? "dislike" : "fill"} />
       </button>
     </aside>
   );
