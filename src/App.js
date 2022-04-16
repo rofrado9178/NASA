@@ -6,13 +6,22 @@ import Loading from "./components/Loading";
 function App() {
   const { state } = useApplicationData();
   console.log(state);
-  const nv = process.env.API_KEY;
-  console.log(nv);
-
   const cardList = state.map((each) => {
     return <Card key={each.id} {...each} />;
   });
-  return <div className="App">{state.isReady ? <Loading /> : cardList}</div>;
+  return (
+    <div className="App">
+      {state.isReady ? (
+        <Loading />
+      ) : (
+        <main className="main-app">
+          <h1 className="title">Welcome To Spacetagram</h1>
+          <p className="description">Brought to you from NASA API</p>
+          <section className="grid-container">{cardList}</section>
+        </main>
+      )}
+    </div>
+  );
 }
 
 export default App;
