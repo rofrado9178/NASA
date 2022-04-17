@@ -1,8 +1,8 @@
 import { BiLike, BiDislike } from "react-icons/bi";
 import { useState } from "react";
 const Button = () => {
-  const [like, setLike] = useState(false);
-  const [dislike, setDisLike] = useState(false);
+  const [like, setLike] = useState();
+  const [dislike, setDisLike] = useState();
 
   return (
     <aside>

@@ -5,7 +5,6 @@ import Loading from "./components/Loading";
 
 function App() {
   const { state } = useApplicationData();
-  console.log(state);
   const cardList = state.map((each) => {
     return <Card key={each.id} {...each} />;
   });
