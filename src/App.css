@@ -96,8 +96,13 @@
     transform: rotate(360deg);
   }
 }
+@media screen and (max-width: 479px) {
+  .grid-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
-@media screen and (min-width: 480px) and (max-width: 659px) {
+@media screen and (min-width: 480px) and (max-width: 689px) {
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
